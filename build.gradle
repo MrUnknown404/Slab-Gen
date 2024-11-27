@@ -16,8 +16,10 @@ repositories {
     mavenLocal()
 }
 
+// SlabGen - MC
+
 base {
-    archivesName = mod_id
+    archivesName = "$mod_id-forge-$minecraft_version"
 }
 
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
@@ -27,7 +29,6 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 //minecraft.accessTransformers.entry public net.minecraft.client.Minecraft textureManager # textureManager
 
 runs {
-    // applies to all the run configs below
     configureEach {
         systemProperty 'forge.logging.markers', 'REGISTRIES'
         systemProperty 'forge.logging.console.level', 'debug'
@@ -75,7 +76,7 @@ tasks.withType(ProcessResources).configureEach {
     ]
     inputs.properties replaceProperties
 
-    filesMatching(['META-INF/neoforge.mods.toml']) {
+    filesMatching(['META-INF/mods.toml']) {
         expand replaceProperties
     }
 }
