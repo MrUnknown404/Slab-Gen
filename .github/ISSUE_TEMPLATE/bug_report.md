@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: "[Mod Version] title"
+title: "[Minecraft Version] [Mod Version] title"
 labels: 'Type: Bug'
 assignees: MrUnknown404
 
